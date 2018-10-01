@@ -1,15 +1,33 @@
 package agent
 
-import (
-	"github.com/srdhoni/go-starter-kit/agent/first"
-	"github.com/srdhoni/go-starter-kit/agent/via"
-	"github.com/srdhoni/go-starter-kit/cancel/cancelAction"
+/*
+type Agent interface {
+	ReviewCancel(CancelDetail)
+}
+*/
+
+type AgentID int
+
+const (
+	IDFirst AgentID = iota
+	IDVia
 )
 
-type Agent interface {
-	ReviewCancel(cancelAction.CancelDetail)
+type CancelDetail struct {
+	PassengerName string
+	JourneyID     int64
 }
 
+type CancellationDetail struct {
+	Passengers []Passenger
+}
+
+type Passenger struct {
+	ID            int64
+	IsCancellable bool
+}
+
+/*
 func New(agentID int) Agent {
 	switch agentID {
 	case via.ID:
@@ -20,3 +38,4 @@ func New(agentID int) Agent {
 	}
 	return nil
 }
+*/

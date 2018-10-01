@@ -1,12 +1,14 @@
 package cancelAction
 
+import "github.com/srdhoni/go-starter-kit/agent"
+
 type Agent interface {
-	ReviewCancel(CancelDetail)
+	ReviewCancel(agent.CancelDetail)
 }
 
 type CancelAction struct {
 	SelectedAgent Agent
-	CancelDetail  CancelDetail
+	CancelDetail  agent.CancelDetail
 }
 
 type FlightCancel struct {
