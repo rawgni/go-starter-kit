@@ -25,16 +25,3 @@ func New(flight order.Flight, detail action.CancelDetail) Cancel {
 	selectedAgent := agent.New(agentID)
 	return action.New(selectedAgent, detail)
 }
-
-// func Estimate(flight order.Flight, cancelDetail cancelAction.CancelDetail) Cancel {
-// 	var agentID int
-// 	for i := range flight.Journeys {
-// 		if flight.Journeys[i].ID == cancelDetail.JourneyID {
-// 			agentID = flight.Journeys[i].AgentID
-// 			break
-// 		}
-// 	}
-
-// 	selectedAgent := agent.New(agentID)
-// 	return cancelAction.New(selectedAgent)
-// }
