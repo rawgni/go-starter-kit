@@ -6,9 +6,6 @@ import (
 	"github.com/srdhoni/go-starter-kit/order"
 )
 
-type Agent interface {
-	ReviewCancel(action.CancelDetail)
-}
 type Cancel interface {
 	Estimate()
 }
