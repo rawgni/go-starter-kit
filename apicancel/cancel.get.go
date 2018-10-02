@@ -4,31 +4,23 @@ import (
 	"log"
 
 	"github.com/srdhoni/go-starter-kit/agent"
-	"github.com/srdhoni/go-starter-kit/order"
+	"github.com/srdhoni/go-starter-kit/cancel"
 )
 
-func HandlerGet(m map[agent.AgentID]interface{}) {
-
-	flight := order.Flight{
-		Journeys: []order.Journey{
-			order.Journey{
+// func HandlerGet(m map[agent.AgentID]interface{}) {
+func HandlerGet() {
+	c := cancel.Cancel{
+		Journeys: []cancel.Journey{
+			cancel.Journey{
 				ID:      1111,
 				AgentID: agent.IDFirst,
 			},
-			order.Journey{
+			cancel.Journey{
 				ID:      2222,
 				AgentID: agent.IDVia,
 			},
 		},
-		Passengers: []order.Passenger{
-			order.Passenger{
-				ID: 1,
-			},
-			order.Passenger{
-				ID: 2,
-			},
-		},
 	}
-
-	log.Printf("%#v\n", flight.GetCancellationDetail(m))
+	// log.Printf("%#v\n", c.GetCancellationDetail(m))
+	log.Printf("%#v\n", c.GetCancellationDetail())
 }

@@ -1,8 +1,6 @@
 package first
 
 import (
-	"fmt"
-
 	"github.com/srdhoni/go-starter-kit/agent"
 )
 
@@ -10,7 +8,7 @@ type AgentFirst struct {
 }
 
 func (a AgentFirst) ReviewCancel(param agent.CancelDetail) {
-	fmt.Println(" ReviewCancel for Passenger ", param, " Started by dummy agent")
+	//fmt.Println(" ReviewCancel for Passenger ", param, " Started by dummy agent")
 }
 
 func (a AgentFirst) GetCancellationDetail(id int64) agent.CancellationDetail {
@@ -32,3 +30,19 @@ func (a AgentFirst) GetCancellationDetail(id int64) agent.CancellationDetail {
 		},
 	}
 }
+
+/*
+func (a AgentFirst) Estimate(id int64, pList []int64) []order.CancellationEstimationResponse {
+	res := make([]order.CancellationEstimationResponse, 0)
+
+	for _, p := range pList {
+		res = append(res, order.CancellationEstimationResponse{
+			PassengerID:     p,
+			JourneyID:       id,
+			EstimatedRefund: 30,
+		})
+	}
+
+	return res
+}
+*/

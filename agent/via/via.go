@@ -1,8 +1,6 @@
 package via
 
 import (
-	"fmt"
-
 	"github.com/srdhoni/go-starter-kit/agent"
 )
 
@@ -11,7 +9,7 @@ type AgentVia struct {
 }
 
 func (a AgentVia) ReviewCancel(param agent.CancelDetail) {
-	fmt.Println(" ReviewCancel for Passenger ", param, " Started by agentID: ", ID)
+	//fmt.Println(" ReviewCancel for Passenger ", param, " Started by agentID: ", ID)
 }
 
 func (a AgentVia) GetCancellationDetail(id int64) agent.CancellationDetail {
@@ -33,3 +31,19 @@ func (a AgentVia) GetCancellationDetail(id int64) agent.CancellationDetail {
 		},
 	}
 }
+
+/*
+func (a AgentVia) Estimate(id int64, pList []int64) []order.CancellationEstimationResponse {
+	res := make([]order.CancellationEstimationResponse, 0)
+
+	for _, p := range pList {
+		res = append(res, order.CancellationEstimationResponse{
+			PassengerID:     p,
+			JourneyID:       id,
+			EstimatedRefund: 5,
+		})
+	}
+
+	return res
+}
+*/

@@ -1,10 +1,7 @@
 package agent
 
-/*
 type Agent interface {
-	ReviewCancel(CancelDetail)
 }
-*/
 
 type AgentID int
 
@@ -27,15 +24,19 @@ type Passenger struct {
 	IsCancellable bool
 }
 
-/*
-func New(agentID int) Agent {
+type CancellationEstimation struct {
+	PassengerID     int64
+	JourneyID       int64
+	EstimatedRefund float64
+}
+
+func New(agentID AgentID) Agent {
 	switch agentID {
-	case via.ID:
-		return &via.AgentVia{}
-	case first.ID:
-		return &first.AgentFirst{}
+	case IDFirst:
+		return &via{}
+	case IDVia:
+		return &first{}
 
 	}
 	return nil
 }
-*/
